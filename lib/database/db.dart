@@ -6,7 +6,7 @@ class DB {
   DB._();
   //Criar instancia de DB
   static final DB instance = DB._();
-  //Instancia do SQLite
+  //Instanciar do SQLite
   static Database? _database;
   //Retornar database, se já estiver inicializado só retorna a instancia, se não, instancia e retorna
   get database async {

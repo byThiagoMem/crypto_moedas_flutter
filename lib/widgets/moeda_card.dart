@@ -17,11 +17,6 @@ class MoedaCard extends StatefulWidget {
 class _MoedaCardState extends State<MoedaCard> {
   NumberFormat real = NumberFormat.currency(locale: 'pt_BR', name: 'R\$');
 
-  static Map<String, Color> precoColor = <String, Color>{
-    'up': Colors.teal,
-    'down': Colors.indigo,
-  };
-
   abrirDetalhes() {
     Navigator.push(
       context,
@@ -63,7 +58,6 @@ class _MoedaCardState extends State<MoedaCard> {
                         widget.moeda.sigla,
                         style: TextStyle(
                           fontSize: 13,
-                          color: Colors.black45,
                         ),
                       ),
                     ],
@@ -73,17 +67,13 @@ class _MoedaCardState extends State<MoedaCard> {
               Container(
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                 decoration: BoxDecoration(
-                  color: precoColor['down']!.withOpacity(0.05),
-                  border: Border.all(
-                    color: precoColor['down']!.withOpacity(0.4),
-                  ),
+                  border: Border.all(color: Colors.grey),
                   borderRadius: BorderRadius.circular(100),
                 ),
                 child: Text(
                   real.format(widget.moeda.preco),
                   style: TextStyle(
                     fontSize: 16,
-                    color: precoColor['down'],
                     letterSpacing: -1,
                   ),
                 ),

@@ -16,7 +16,6 @@ class CarteiraPage extends StatefulWidget {
 class _CarteiraPageState extends State<CarteiraPage> {
   int index = 0;
   double totalCarteira = 0;
-  double saldo = 0;
   late NumberFormat real;
   late ContaRepository conta;
 
@@ -29,7 +28,6 @@ class _CarteiraPageState extends State<CarteiraPage> {
     conta = Provider.of<ContaRepository>(context);
     final loc = context.read<AppSettings>().locale;
     real = NumberFormat.currency(locale: loc['locale'], name: loc['name']);
-    saldo = conta.saldo;
 
     setTotalCarteira();
 
